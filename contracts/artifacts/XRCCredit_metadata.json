@@ -554,11 +554,11 @@
 			]
 		},
 		"Documents/GitHub/XRC-Credit/contracts/XRC-Credit.sol": {
-			"keccak256": "0xd596575b74affe46a71ce756f9847c5e5b22f9d95c1b7c610f8e00ca1a9cccb2",
+			"keccak256": "0x12472d8b4a45010e8b451fd9f4cac6d7daad09335f217561dc91d963a075e45f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7c17f43dcb9131e7d928c9c477fe7f0b7aeba5e811a59dd9ad24ed28abefaccd",
-				"dweb:/ipfs/Qma5oS6kJJJZWuMAW1yJqRHQdcnS7dBq7gartA1Py1ZuwH"
+				"bzz-raw://ad6d84edd3aeec4ba9d636f3fe9f33466c1b8e1455ba3da4741d0a5617eeba0d",
+				"dweb:/ipfs/QmdyMsiZWbBTcShfPJmp736Ysy5wJ3tMvqj2hG98asBTfq"
 			]
 		}
 	},
