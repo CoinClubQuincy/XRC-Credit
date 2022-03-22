@@ -1,0 +1,367 @@
+{
+	"id": "c603c356d985e6239c92f54596424375",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.13",
+	"solcLongVersion": "0.8.13+commit.abaa5c0e",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Documents/GitHub/XRC-Credit/Credit.sol": {
+				"content": "pragma solidity ^0.8.10;\n// SPDX-License-Identifier: MIT\n\ncontract Credit{\n    constructor(){}\n\n\n    \n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"Documents/GitHub/XRC-Credit/Credit.sol": {
+				"Credit": {
+					"abi": [
+						{
+							"inputs": [],
+							"stateMutability": "nonpayable",
+							"type": "constructor"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Documents/GitHub/XRC-Credit/Credit.sol\":58:103  contract Credit{... */\n  mstore(0x40, 0x80)\n    /* \"Documents/GitHub/XRC-Credit/Credit.sol\":79:94  constructor(){} */\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n    /* \"Documents/GitHub/XRC-Credit/Credit.sol\":58:103  contract Credit{... */\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"Documents/GitHub/XRC-Credit/Credit.sol\":58:103  contract Credit{... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212202f6804d45cc04c35471a1f8060b3b66385cd42511840dd1359c876da96ef5bb764736f6c634300080d0033\n}\n",
+						"bytecode": {
+							"functionDebugData": {
+								"@_5": {
+									"entryPoint": null,
+									"id": 5,
+									"parameterSlots": 0,
+									"returnSlots": 0
+								}
+							},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212202f6804d45cc04c35471a1f8060b3b66385cd42511840dd1359c876da96ef5bb764736f6c634300080d0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2F PUSH9 0x4D45CC04C35471A1F DUP1 PUSH1 0xB3 0xB6 PUSH4 0x85CD4251 XOR BLOCKHASH 0xDD SGT MSIZE 0xC8 PUSH23 0xDA96EF5BB764736F6C634300080D003300000000000000 ",
+							"sourceMap": "58:45:0:-:0;;;79:15;;;;;;;;;;58:45;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea26469706673582212202f6804d45cc04c35471a1f8060b3b66385cd42511840dd1359c876da96ef5bb764736f6c634300080d0033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2F PUSH9 0x4D45CC04C35471A1F DUP1 PUSH1 0xB3 0xB6 PUSH4 0x85CD4251 XOR BLOCKHASH 0xDD SGT MSIZE 0xC8 PUSH23 0xDA96EF5BB764736F6C634300080D003300000000000000 ",
+							"sourceMap": "58:45:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 79,
+									"end": 94,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 103,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a26469706673582212202f6804d45cc04c35471a1f8060b3b66385cd42511840dd1359c876da96ef5bb764736f6c634300080d0033",
+									".code": [
+										{
+											"begin": 58,
+											"end": 103,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 58,
+											"end": 103,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 58,
+											"end": 103,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 103,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 58,
+											"end": 103,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 103,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Documents/GitHub/XRC-Credit/Credit.sol\":\"Credit\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Documents/GitHub/XRC-Credit/Credit.sol\":{\"keccak256\":\"0x342518cfc7788c7e83654c6f5a58fdf01a42e2129bfb3a3fe27d1476848334f3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9b49f39f0a7292c2aa58fc8959b9325a5c426d8e8fe3b68c3bd5ef5b6886f245\",\"dweb:/ipfs/QmQATLNVCiR6of8KDgQ5Ci1Ksoc2dF4cBMyZj59TEKE8v5\"]}},\"version\":1}",
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Documents/GitHub/XRC-Credit/Credit.sol": {
+				"ast": {
+					"absolutePath": "Documents/GitHub/XRC-Credit/Credit.sol",
+					"exportedSymbols": {
+						"Credit": [
+							6
+						]
+					},
+					"id": 7,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".10"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "0:24:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "Credit",
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 6,
+							"linearizedBaseContracts": [
+								6
+							],
+							"name": "Credit",
+							"nameLocation": "67:6:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"body": {
+										"id": 4,
+										"nodeType": "Block",
+										"src": "92:2:0",
+										"statements": []
+									},
+									"id": 5,
+									"implemented": true,
+									"kind": "constructor",
+									"modifiers": [],
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 2,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "90:2:0"
+									},
+									"returnParameters": {
+										"id": 3,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "92:0:0"
+									},
+									"scope": 6,
+									"src": "79:15:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "public"
+								}
+							],
+							"scope": 7,
+							"src": "58:45:0",
+							"usedErrors": []
+						}
+					],
+					"src": "0:103:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
