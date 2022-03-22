@@ -1,0 +1,58 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "Issue_Credit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Documents/GitHub/XRC-Credit/contracts/XRC-Credit.sol": "Credit"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Documents/GitHub/XRC-Credit/contracts/XRC-Credit.sol": {
+			"keccak256": "0x1439a0c212f8c7f5fa41a14f9c1df380c89a4c350ca37c80bfdb3654c8e998dd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6433d1f74dd611f09116e1d17b9c398dc7a675f8d8439f71f566c1a2f6971c80",
+				"dweb:/ipfs/QmesR5rZA1WMmJkG3fVHYQyvyd6ptG7rr5AqZDg1KrQeVQ"
+			]
+		}
+	},
+	"version": 1
+}
