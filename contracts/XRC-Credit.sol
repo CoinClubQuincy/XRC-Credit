@@ -2,7 +2,13 @@ pragma solidity ^0.8.10;
 // SPDX-License-Identifier: MIT
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
+contract SimpleToken is ERC20 {
+    constructor(string memory name,string memory symbol,uint256 initialSupply) public ERC20(name, symbol) {
+        _mint(msg.sender, initialSupply);
+    }
+}
 //main Credit contract
 contract XRCCredit is ERC1155{
     bool public contractDebtorStatus= false;  // tells current status of Debtor on contract
@@ -29,9 +35,9 @@ modifier OnlyDebtor{
     function Aproove_Credit()public OnlyCreditor{}
     //Debtor can redeem contract upon approval by Creditor
     function RedeemCredit() OnlyDebtor public {}
-    //Debtor can
+    //Debtor can Issue Payments to contract
     function IssuePayment() OnlyDebtor public {} // XDC-Credit must change fromXRC to XDC
-    //Debtor
+    //Debtor can File KYC info to get Aprooved
     function KYC()public OnlyDebtor {} // user must enter KYC info to engage with contract
 
 }
