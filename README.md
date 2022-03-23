@@ -1,6 +1,11 @@
 # XRC-Credit
 This contract will simply illustrate a contract where a party can issue debt in the form of a XRC token and keep track of the liability 
 
+Contract Features
+- Tokenized Ownership of Debt lent in contract
+- KCY store & pending approval of request
+- funds Escrowed in contract intrest counted in contract
+- contract status produce new token for debt holder to show as proven paid debt
 
 
 
