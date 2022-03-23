@@ -10,5 +10,4 @@ Contract Features
 
 
 
-![Credit contract](https://user-images.githubusercontent.com/16103963/159776427-e7c5860f-eec4-4f7e-a375-84b16ce67cd8.png)
-
+![Credit contract (1)](https://user-images.githubusercontent.com/16103963/159777498-13afbcd9-1ac8-43f4-85b5-5d178f0d4826.png)
