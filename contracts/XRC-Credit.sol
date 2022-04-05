@@ -1,6 +1,5 @@
 pragma solidity ^0.8.10;
 // SPDX-License-Identifier: MIT
-
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
@@ -15,31 +14,33 @@ contract XRCCredit is ERC1155{
     uint public DebtAmmount=0;                // Current Debt Ammount
     address public Debtor;                      
     address public Creditor;
-
+    bool public acceptStatus;
 
     uint256 public constant CreditContractToken = 0;
     constructor(string memory URI,uint DebtAmmount,address Debtor, address Creditor) public ERC1155(URI){
         _mint(msg.sender, CreditContractToken, 1, "");
-
     }
-
-modifier OnlyCreditor{
-    require(1 == balanceOf(msg.sender,CreditContractToken));
-    _;
+    modifier OnlyCreditor{
+        require(1 == balanceOf(msg.sender,CreditContractToken));
+        _;
     }
-modifier OnlyDebtor{
-    require(msg.sender == Debtor);
-    _;
-}
+    modifier OnlyDebtor{
+        require(msg.sender == Debtor);
+        _;
+    }
+    modifier ContractAprooveStatus{
+        require(acceptStatus == true);
+        _;
+    } 
     //Creditor can Aproove credit
-    function Aproove_Credit()public OnlyCreditor{}
+    function Aproove_Credit(bool _status)public OnlyCreditor returns(bool){
+        acceptStatus == _status;
+        return _status;
+    }
     //Debtor can redeem contract upon approval by Creditor
-    function RedeemCredit() OnlyDebtor public {}
+    function RedeemCredit() OnlyDebtor ContractAprooveStatus public {}
     //Debtor can Issue Payments to contract
     function IssuePayment() OnlyDebtor public {} // XDC-Credit must change fromXRC to XDC
     //Debtor can File KYC info to get Aprooved
     function KYC()public OnlyDebtor {} // user must enter KYC info to engage with contract
-
 }
-
- 
