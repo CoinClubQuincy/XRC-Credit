@@ -33,7 +33,7 @@ abstract contract CreditTests is Test {
         vm.prank(debtor);
         credit.KYC(DOC);
         vm.prank(creditor);
-        credit.Aproove_Credit(true);
+        credit.Aproove_Credit(true, DOC);
     }
 
     function toActive() internal {
@@ -76,7 +76,7 @@ abstract contract CreditTests is Test {
         vm.expectRevert("only the holder of the credit token");
         credit.FundCredit();
         vm.expectRevert("only the holder of the credit token");
-        credit.Aproove_Credit(true);
+        credit.Aproove_Credit(true, DOC);
         vm.expectRevert("only the holder of the credit token");
         credit.WithdrawPayments();
         vm.expectRevert("only the holder of the credit token");
@@ -105,21 +105,32 @@ abstract contract CreditTests is Test {
         credit.KYC(bytes32(0));
     }
 
+    function test_ApprovalIsTiedToTheReviewedDocument() public {
+        fund(creditor);
+        vm.prank(debtor);
+        credit.KYC(DOC);
+        vm.prank(debtor);
+        credit.KYC(keccak256("swapped"));
+        vm.prank(creditor);
+        vm.expectRevert("the document has changed");
+        credit.Aproove_Credit(true, DOC);
+    }
+
     function test_ApprovalNeedsFundingAndKYC() public {
         vm.prank(creditor);
         vm.expectRevert("credit must be funded");
-        credit.Aproove_Credit(true);
+        credit.Aproove_Credit(true, DOC);
         fund(creditor);
         vm.prank(creditor);
         vm.expectRevert("debtor must file KYC");
-        credit.Aproove_Credit(true);
+        credit.Aproove_Credit(true, DOC);
     }
 
     function test_ApprovalChangesStateAndCanBeWithdrawn() public {
         toApproved();
         assertTrue(credit.acceptStatus());
         vm.prank(creditor);
-        credit.Aproove_Credit(false);
+        credit.Aproove_Credit(false, bytes32(0));
         assertFalse(credit.acceptStatus());
         vm.prank(debtor);
         vm.expectRevert("credit is not approved");
@@ -325,7 +336,7 @@ contract XDCCreditTest is CreditTests {
         c.FundCredit{value: 10 ether}();
         party.fileKYC(c);
         vm.prank(creditor);
-        c.Aproove_Credit(true);
+        c.Aproove_Credit(true, keccak256("doc"));
         party.redeem(c);
         assertTrue(party.attempted());
         assertFalse(party.reentered());

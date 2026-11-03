@@ -73,11 +73,13 @@ abstract contract CreditBase is ERC1155, ReentrancyGuard {
         contractDebtorStatus = true;
         emit Filed(_documentHash);
     }
-    //Creditor can Aproove credit once it is funded and KYC is filed, or withdraw that approval
-    function Aproove_Credit(bool _status) public OnlyCreditor returns(bool){
+    //Creditor can Aproove credit once it is funded and KYC is filed, or withdraw that approval.
+    //The creditor names the document they reviewed, so the debtor can't swap it while the approval is pending
+    function Aproove_Credit(bool _status, bytes32 _reviewedHash) public OnlyCreditor returns(bool){
         if(_status){
             require(state == State.Funded, "credit must be funded");
             require(contractDebtorStatus, "debtor must file KYC");
+            require(_reviewedHash == documentHash, "the document has changed");
             state = State.Approved;
         } else {
             require(state == State.Approved, "credit is not approved");

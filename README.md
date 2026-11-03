@@ -43,7 +43,7 @@ The constructor takes `(uri, principal, interestBps, debtor, creditor)`, plus th
 | --- | --- | --- | --- |
 | `FundCredit()` | Holder of token 0 | Created | Puts the principal in the contract |
 | `KYC(documentHash)` | Debtor | Created, Funded | Stores a hash of the debtor's documents |
-| `Aproove_Credit(status)` | Holder of token 0 | Funded, Approved | Approves the debtor once funded and filed, or withdraws approval |
+| `Aproove_Credit(status, reviewedHash)` | Holder of token 0 | Funded, Approved | Approves the debtor once funded and filed, or withdraws approval. Approving fails if the filed document no longer matches `reviewedHash`. The hash is ignored when withdrawing |
 | `RedeemCredit()` | Debtor | Approved | Sends the principal to the debtor, once |
 | `IssuePayment(amount)` | Debtor | Active | Repays. Paying more than is owed is refused, and the last payment mints token 1 to the debtor |
 | `WithdrawPayments()` | Holder of token 0 | Any | Collects the repayments made so far |
@@ -68,7 +68,7 @@ You need [Foundry](https://getfoundry.sh).
 
 ## What is tested
 
-[`test/foundry/Credit.t.sol`](test/foundry/Credit.t.sol) has 23 test functions and runs in CI on every push. The shared ones run against both variants, so `forge test` reports 41 results.
+[`test/foundry/Credit.t.sol`](test/foundry/Credit.t.sol) has 24 test functions and runs in CI on every push. The shared ones run against both variants, so `forge test` reports 43 results.
 
 | Tested | Not tested |
 | --- | --- |
@@ -86,6 +86,7 @@ The earlier version was a skeleton with empty functions, so there is nothing to 
 - The contract was implemented. The constructor now also takes `interestBps`, and `XRCCredit` takes a token address.
 - `KYC` takes a document hash, and `IssuePayment` takes an amount.
 - `XDC-Credit.sol` was an empty file. It now holds `XDCCredit`.
+- `Aproove_Credit` takes the hash of the document the creditor reviewed, so the debtor cannot replace it while the approval is pending.
 - Tracked build output was removed.
 
 ## Known issues
